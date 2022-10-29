@@ -92,3 +92,4 @@ def user_notes():
                 return jsonify({"error": "Notes from this user not found."})
         else:
             return jsonify({"notes": NOTES})
+
