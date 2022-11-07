@@ -2,7 +2,7 @@
 - Install python3
 - Install pip
 - Create environment `python3 -m venv env`
-- Activate environment `source ./env/bin/activate`
+- Activate environment `source ./env/scripts/activate`
 - Install packages `pip install -r requirements.txt`
 - Run app `flask --app core run --host 0.0.0.0 -p 8080`
 
