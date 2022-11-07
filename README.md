@@ -4,7 +4,7 @@
 - Create environment `python3 -m venv env`
 - Activate environment `source ./env/scripts/activate`
 - Install packages `pip install -r requirements.txt`
-- Run app `flask --app core run --host 0.0.0.0 -p 8080`
+- Run app `flask --app core run --host 0.0.0.0 -p 5000`
 
 ## How to run via docker:
 - Install docker
