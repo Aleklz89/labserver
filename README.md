@@ -76,11 +76,7 @@
 >```
 >http://{{domain}}/notes?user_id=1
 >```
-### Query Params
 
-|Param|value|
-|---|---|
-|user_id|1|
 
 
 
@@ -100,3 +96,12 @@
     "amount": 20
 }
 ```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## End-point: Get all records from user in specific category
+### Method: GET
+>```
+>http://{{domain}}/records?user_id=1&category_id=2
+>```
