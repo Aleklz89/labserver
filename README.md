@@ -103,5 +103,5 @@
 ## End-point: Get all records from user in specific category
 ### Method: GET
 >```
->http://{{domain}}/records?user_id=1&category_id=2
+>http://{{domain}}/notes?user_id=1&category_id=2
 >```
