@@ -61,11 +61,6 @@ def create_category():
 # POST /category
 
 
-@app.route("/notes")
-def get_notes():
-    return jsonify({"notes": NOTES})
-
-
 @app.route("/note", methods=['POST'])
 def create_notes():
     note_data = request.get_json()
@@ -73,23 +68,32 @@ def create_notes():
     return jsonify(note_data)
 
 
-@app.route("/user_notes")
-def user_notes():
-    note_id = request.args.get('id', default=None, type=int)
+@app.route("/notes")
+def get_notes():
+    record_id = request.args.get('id', default=None, type=int)
     user_id = request.args.get('user_id', default=None, type=int)
-    if note_id:
-        found_note = next((record for record in NOTES if record["id"] == note_id), None)
-        if found_note:
-            return jsonify({"note": found_note})
+    category_id = request.args.get('category_id', default=None, type=int)
+    if record_id:
+        found_record = next((record for record in NOTES if record["id"] == record_id), None)
+        if found_record:
+            return jsonify({"record": found_record})
         else:
-            return jsonify({"error": "Note not found."})
+            return jsonify({"error": "Record not found."})
     else:
         if user_id:
-            records = list(filter(lambda record: record['user_id'] == user_id, NOTES))
-            if len(records) > 0:
-                return jsonify({"notes": records})
+            if category_id:
+                notes = list(filter(lambda record: record['user_id'] == user_id and record["category_id"] == category_id, NOTES))
+                if len(notes) > 0:
+                    return jsonify({"notes": notes})
+                else:
+                    return jsonify({"error": "This user has no notes in this category yet"})
             else:
-                return jsonify({"error": "Notes from this user not found."})
+                notes = list(filter(lambda record: record['user_id'] == user_id, NOTES))
+                if len(notes) > 0:
+                    return jsonify({"notes": notes})
+                else:
+                    return jsonify({"error": "This user has no notes in this category yet"})
         else:
             return jsonify({"notes": NOTES})
+
 
