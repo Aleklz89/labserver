@@ -11,3 +11,4 @@ COPY labserver /opt/labserver
 WORKDIR /opt
 
 CMD flask --app labserver run --host 0.0.0.0 -p $PORT
+$ heroku ps:scale web=1
