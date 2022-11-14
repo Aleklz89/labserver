@@ -16,5 +16,3 @@ jobs:
          heroku_app_name: "labserverapp"
          heroku_email: "ia03.aleksandrov.oleg@gmail.com"
          usedocker: true
-
-#test
