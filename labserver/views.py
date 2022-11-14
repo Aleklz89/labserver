@@ -26,6 +26,7 @@ NOTES = [
     },
 ]
 
+
 # GET /users
 # POST /user
 
@@ -42,6 +43,7 @@ def create_user():
     print(USERS)
     return jsonify(user_data)
 
+
 # GET /categories
 # POST /category
 
@@ -56,6 +58,7 @@ def create_category():
     category_data = request.get_json()
     CATEGORIES.append(category_data)
     return jsonify(category_data)
+
 
 # GET /categories
 # POST /category
@@ -82,7 +85,8 @@ def get_notes():
     else:
         if user_id:
             if category_id:
-                notes = list(filter(lambda record: record['user_id'] == user_id and record["category_id"] == category_id, NOTES))
+                notes = list(
+                    filter(lambda record: record['user_id'] == user_id and record["category_id"] == category_id, NOTES))
                 if len(notes) > 0:
                     return jsonify({"notes": notes})
                 else:
@@ -97,3 +101,6 @@ def get_notes():
             return jsonify({"notes": NOTES})
 
 
+@app.route("/")
+def index():
+    return "Flask app"
