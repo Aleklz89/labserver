@@ -1,3 +1,5 @@
+# Lab 1
+> Deployment link [Here](https://labserverapp.herokuapp.com/)
 ## How to run via python:
 - Install python3
 - Install pip
